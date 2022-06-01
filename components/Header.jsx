@@ -30,7 +30,7 @@ export default function Header(props) {
           <input
             type="text"
             placeholder="Lieblingsprodukt suchen..."
-            className="px-4 py-2 bg-gray-100 rounded-md"
+            className="w-full px-4 py-2 bg-gray-100 rounded-md"
           />
         </div>
         <div className="flex items-center justify-end gap-4">
