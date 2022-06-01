@@ -25,7 +25,7 @@ export default function Header(props) {
   return (
     <div className="sticky top-0 z-10 bg-white border-b border-gray-100">
       <div className="container grid items-center grid-cols-4 px-8 py-4 mx-auto">
-        <div>Hey {user?.firstName}</div>
+        <div className="text-xl">Hey {user?.firstName}</div>
         <div className="col-span-2 mx-auto">
           <input
             type="text"
