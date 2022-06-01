@@ -13,7 +13,7 @@ export default function Header(props) {
           />
         </div>
         <div className="flex items-center justify-end gap-4">
-        <User size={24}></User>
+          <User size={24}></User>
           <div className="relative">
             <Heart size={24}></Heart>
             {"?" != null && <Bubble text="?"></Bubble>}
