@@ -13,6 +13,7 @@ export default function Content(props) {
             className="border rounded-md flex flex-col overflow-hidden"
           >
             <Image
+              alt="product-image"
               src={`https://picsum.photos/seed/${Math.random() * 99999}/200`}
               width={200}
               height={200}
