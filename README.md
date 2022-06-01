@@ -32,3 +32,16 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Babymarkt: Introduction to React
+
+### Starting point for [useContext hook](/qgwr32/babymarkt-react/add-use-context)
+Implement UserContext to share user data
+
+### Starting point for [useReducer hook](/qgwr32/babymarkt-react/add-use-reducer)
+Implement reducer for signing in and out 
+
+### Starting point for [useEffect hook](/qgwr32/babymarkt-react/add-use-effect)
+Implement error alert when password does not match while signing in 
+
+### Final [project](/qgwr32/babymarkt-react/main)
