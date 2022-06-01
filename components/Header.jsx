@@ -1,6 +1,7 @@
 import { Heart, ShoppingBag, SignIn, SignOut, User } from "phosphor-react";
 import { useContext, useEffect } from "react";
-import { UserContext } from "../pages";
+import { UserContext } from "../pages/_app";
+import Navigation from "./common/Navigation";
 
 export default function Header(props) {
   const [{ user, errors }, service] = useContext(UserContext);
@@ -23,17 +24,18 @@ export default function Header(props) {
   }
 
   return (
-    <div className="sticky top-0 z-10 bg-white border-b border-gray-100">
-      <div className="container grid items-center grid-flow-row-dense grid-cols-2 px-8 py-4 mx-auto gap-y-4 sm:grid-cols-4">
+    <div className="header sticky top-0 z-10 bg-white border-b border-gray-100">
+      <div className="container grid items-center grid-flow-row-dense grid-cols-2 px-8 py-4 mx-auto gap-y-4 sm:grid-cols-3">
         <div className="text-xl">Hey {user?.firstName}</div>
-        <div className="col-span-2">
-          <input
-            type="text"
-            placeholder="Lieblingsprodukt suchen..."
-            className="w-full px-4 py-2 bg-gray-100 rounded-md"
-          />
-        </div>
+        <Navigation />
         <div className="flex items-center justify-end gap-4">
+          <div>
+            <input
+              type="text"
+              placeholder="Lieblingsprodukt suchen..."
+              className="px-4 py-2 bg-gray-100 rounded-md"
+            />
+          </div>
           <button onClick={user == null ? onSignIn : onSignOut}>
             {user == null ? (
               <SignIn size={24}></SignIn>

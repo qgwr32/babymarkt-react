@@ -1,5 +1,6 @@
+import Link from "next/link";
 import { useContext } from "react";
-import { UserContext } from "../pages";
+import { UserContext } from "../pages/_app";
 
 export default function Header(props) {
   const [{ user }, service] = useContext(UserContext);
@@ -8,7 +9,7 @@ export default function Header(props) {
     service({ type: "SIGN_OUT" });
   }
   return (
-    <div className="text-white bg-gray-800">
+    <div className="footer text-white bg-gray-800">
       <div className="container grid items-start grid-cols-2 gap-8 p-8 mx-auto md:grid-cols-4">
         <div className="space-y-2">
           {user != null && (
@@ -52,6 +53,11 @@ export default function Header(props) {
           <div>Bewertungen</div>
           <div>Aptamil und Milupa Reservierungsservice</div>
           <div>Ratgeber</div>
+          <div>
+            <Link href="/card-listing">
+              <a>Cards</a>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

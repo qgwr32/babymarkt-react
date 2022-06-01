@@ -1,41 +1,25 @@
-import { createContext, useReducer } from 'react';
-import Layout from '../components/Layout'
-
-const defaultUser = {
-  password: "asdf",
-  firstName: "Jim",
-  babypoints: 454,
-  cartSize: 6,
-  wishlistCount: 2,
-};
-
-export const UserContext = createContext();
+import Image from "next/image";
 
 export default function Home() {
-  const userReducer = useReducer(userService, {});
   return (
-    <UserContext.Provider value={userReducer}>
-      <Layout></Layout>
-    </UserContext.Provider>
-  )
-}
-
-function userService({ user }, action) {
-  switch (action.type) {
-    case "SIGN_OUT":
-      return {};
-    case "SIGN_IN": {
-      if (user != null) {
-        return { user };
-      }
-
-      if (action.password !== defaultUser.password) {
-        return { errors: ["Anmeldung fehlgeschlagen: Das angegebene Passwort ist falsch."] };
-      }
-
-      return { user: defaultUser };
-    }
-    default:
-      throw new Error(`Invalid action: ${action.type}`);
-  }
+    <div
+      className="container grid gap-4 p-8 mx-auto pb-20"
+      style={{ gridTemplateColumns: "repeat(auto-fill,minmax(8rem,1fr))" }}
+    >
+      {Array.from({ length: 20 }).map((_, i) => (
+        <div
+          key={i}
+          className="flex flex-col overflow-hidden border rounded-md"
+        >
+          <Image
+            alt="product-image"
+            src={`https://picsum.photos/seed/${i * 100}/200`}
+            width={200}
+            height={200}
+          ></Image>
+          <div className="p-4">Artikel {i + 1}</div>
+        </div>
+      ))}
+    </div>
+  );
 }
