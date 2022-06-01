@@ -12,7 +12,7 @@ const defaultUser = {
 export const UserContext = createContext();
 
 export default function Home() {
-  const userReducer = useReducer(userService, null);
+  const userReducer = useReducer(userService, {});
   return (
     <UserContext.Provider value={userReducer}>
       <Layout></Layout>
@@ -20,22 +20,22 @@ export default function Home() {
   )
 }
 
-function userService(user, action) {
+function userService({ user }, action) {
   switch (action.type) {
     case "SIGN_OUT":
-      return null;
+      return {};
     case "SIGN_IN": {
       if (user != null) {
-        return user;
+        return { user };
       }
 
       if (action.password !== defaultUser.password) {
-        return null;
+        return { errors: ["Anmeldung fehlgeschlagen: Das angegebene Passwort ist falsch."] };
       }
 
-      return defaultUser;
+      return { user: defaultUser };
     }
     default:
-      return user;
+      throw new Error(`Invalid action: ${action.type}`);
   }
 }
