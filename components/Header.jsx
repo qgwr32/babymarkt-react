@@ -2,9 +2,9 @@ import { Heart, ShoppingBag, User } from "phosphor-react";
 
 export default function Header(props) {
   return (
-    <div className="bg-white z-10 sticky top-0 border-b border-gray-100">
-      <div className="container grid grid-cols-4 items-center px-8 py-4 mx-auto">
-        <div>Hey ?</div>
+    <div className="sticky top-0 z-10 bg-white border-b border-gray-100">
+      <div className="container grid items-center grid-cols-4 px-8 py-4 mx-auto">
+        <div className="text-xl">Hey ?</div>
         <div className="col-span-2 mx-auto">
           <input
             type="text"
@@ -30,7 +30,7 @@ export default function Header(props) {
 
 function Bubble(props) {
   return (
-    <div className="absolute top-1/2 left-1/2 w-4 h-4 text-xs text-white flex items-center justify-center rounded-full bg-red-600">
+    <div className="absolute flex items-center justify-center w-4 h-4 text-xs text-white bg-red-600 rounded-full top-1/2 left-1/2">
       {props.text}
     </div>
   );
