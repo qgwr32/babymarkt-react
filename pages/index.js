@@ -7,7 +7,6 @@ const defaultUser = {
   babypoints: 454,
   cartSize: 6,
   wishlistCount: 2,
-  errors: null
 };
 
 export const UserContext = createContext();
