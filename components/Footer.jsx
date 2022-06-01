@@ -8,12 +8,12 @@ export default function Header(props) {
     service({ type: "SIGN_OUT" });
   }
   return (
-    <div className="bg-gray-800 text-white">
-      <div className="container grid grid-cols-2 md:grid-cols-4 items-start gap-8 mx-auto p-8">
+    <div className="text-white bg-gray-800">
+      <div className="container grid items-start grid-cols-2 gap-8 p-8 mx-auto md:grid-cols-4">
         <div className="space-y-2">
           {user != null && (
             <>
-              <h2 className="text-lg font-medium mb-4">Über dich</h2>
+              <h2 className="mb-4 text-lg font-medium">Über dich</h2>
               <div>Hey {user.firstName}</div>
               <div>Du besitzt {user.babypoints} babypoints.</div>
               <div>
@@ -29,13 +29,13 @@ export default function Header(props) {
           )}
         </div>
         <div className="space-y-2">
-          <h2 className="text-lg font-medium mb-4">Über uns</h2>
+          <h2 className="mb-4 text-lg font-medium">Über uns</h2>
           <div>Unternehmen</div>
           <div>Karriere</div>
           <div>Entdecke unsere Filialen</div>
         </div>
         <div className="space-y-2">
-          <h2 className="text-lg font-medium mb-4">Alle Infos</h2>
+          <h2 className="mb-4 text-lg font-medium">Alle Infos</h2>
           <div>Impressum</div>
           <div>AGB</div>
           <div>Datenschutz</div>
@@ -44,7 +44,7 @@ export default function Header(props) {
           <div>Entsorgung / Umweltschutz</div>
         </div>
         <div className="space-y-2">
-          <h2 className="text-lg font-medium mb-4">Deine Vorteile</h2>
+          <h2 className="mb-4 text-lg font-medium">Deine Vorteile</h2>
           <div>FAQ / Kontakt</div>
           <div>Retourenservice</div>
           <div>babypoints</div>
