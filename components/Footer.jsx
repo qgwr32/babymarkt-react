@@ -2,21 +2,31 @@ import { useContext } from "react";
 import { UserContext } from "../pages";
 
 export default function Header(props) {
-  const user = useContext(UserContext);
+  const [user, service] = useContext(UserContext);
+
+  function onSignOut() {
+    service({ type: "SIGN_OUT" });
+  }
   return (
     <div className="bg-gray-800 text-white">
       <div className="container grid grid-cols-2 md:grid-cols-4 items-start gap-8 mx-auto p-8">
         <div className="space-y-2">
-          <h2 className="text-lg font-medium mb-4">Über dich</h2>
-          <div>Hey {user.firstName}</div>
-          <div>Du besitzt {user.babypoints} babypoints.</div>
-          <div>
-            Aktuell warten {user.cartSize} Artikel in deinem Warenkorb auf dich.
-          </div>
-          <div>
-            Auf insgesamt {user.wishlistCount} Wunschzetteln hast du dir Artikel
-            vorgemerkt.
-          </div>
+          {user != null && (
+            <>
+              <h2 className="text-lg font-medium mb-4">Über dich</h2>
+              <div>Hey {user.firstName}</div>
+              <div>Du besitzt {user.babypoints} babypoints.</div>
+              <div>
+                Aktuell warten {user.cartSize} Artikel in deinem Warenkorb auf
+                dich.
+              </div>
+              <div>
+                Auf insgesamt {user.wishlistCount} Wunschzetteln hast du dir
+                Artikel vorgemerkt.
+              </div>
+              <button onClick={onSignOut}>Abmelden</button>
+            </>
+          )}
         </div>
         <div className="space-y-2">
           <h2 className="text-lg font-medium mb-4">Über uns</h2>
