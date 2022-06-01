@@ -1,3 +1,4 @@
+import { createContext } from 'react';
 import Layout from '../components/Layout'
 
 const user = {
@@ -7,8 +8,12 @@ const user = {
   wishlistCount: 2
 };
 
+export const UserContext = createContext();
+
 export default function Home() {
   return (
-    <Layout></Layout>
+    <UserContext.Provider value={user}>
+      <Layout></Layout>
+    </UserContext.Provider>
   )
 }

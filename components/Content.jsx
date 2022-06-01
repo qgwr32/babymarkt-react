@@ -14,13 +14,11 @@ export default function Content(props) {
           >
             <Image
               alt="product-image"
-              src={`https://picsum.photos/seed/${Math.random() * 99999}/200`}
+              src={`https://picsum.photos/seed/${i * 100}/200`}
               width={200}
               height={200}
             ></Image>
-            <div className="p-4">
-              Artikel {Math.floor(Math.random() * 10000)}
-            </div>
+            <div className="p-4">Artikel {i + 1}</div>
           </div>
         ))}
       </div>
