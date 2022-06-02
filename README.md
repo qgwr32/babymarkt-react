@@ -24,7 +24,7 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 ## Babymarkt: Introduction to React
 
 ### 1: Starting point for [useContext hook](/qgwr32/babymarkt-react/add-use-context)
-Implement UserContext to share user data
+Implement UserContext to avoid prop-drilling
 
 ### 2: Starting point for [useReducer hook](/qgwr32/babymarkt-react/add-use-reducer)
 Implement reducer for signing in and out 
