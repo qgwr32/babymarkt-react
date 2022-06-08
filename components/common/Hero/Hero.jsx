@@ -20,7 +20,7 @@ function Hero(props) {
   };
   return (
     <div className="hero flex flex-col justify-center items-center text-white bg-blue-500 min-h-[300px]">
-      <div className="hero__title text-2xl font-bold">{title}</div>
+      <div className="text-2xl font-bold hero__title">{title}</div>
       <div className="hero__description">
         {counter === 0
           ? description
@@ -28,7 +28,7 @@ function Hero(props) {
               counter === 1 ? "time" : "times"
             }.`}
       </div>
-      <div className="hero__button flex flex-row mt-4">
+      <div className="flex flex-row mt-4 hero__button">
         <Button
           className="bg-blue-900"
           size="large"
@@ -39,7 +39,7 @@ function Hero(props) {
         </Button>
         {counter > 0 && (
           <Button
-            className="bg-blue-900 ml-2"
+            className="ml-2 bg-blue-900"
             variant="dark"
             size="large"
             onClick={resetCounter}
