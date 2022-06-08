@@ -1,9 +1,10 @@
 import Image from "next/image";
+import "../typescript/01-start/hello-world";
 
 export default function Home() {
   return (
     <div
-      className="container grid gap-4 p-8 mx-auto pb-20"
+      className="container grid gap-4 p-8 pb-20 mx-auto"
       style={{ gridTemplateColumns: "repeat(auto-fill,minmax(8rem,1fr))" }}
     >
       {Array.from({ length: 20 }).map((_, i) => (
