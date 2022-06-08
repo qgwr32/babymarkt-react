@@ -37,7 +37,7 @@ const INITIAL_CARDS = [
   },
 ];
 
-function cards() {
+function Cards() {
   const [cards, setCards] = useState(INITIAL_CARDS);
 
   const addCard = () => {
@@ -58,7 +58,7 @@ function cards() {
     ]);
   };
 
-  const deleteCard = (cardId) => {
+  const deleteCard = (cardId: number) => {
     const filteredCards = cards.filter((card) => card.id !== cardId);
     setCards(filteredCards);
   };
@@ -78,7 +78,6 @@ function cards() {
             {cards.map((card, idx) => (
               <Card
                 key={card.id}
-                buttonText={card.buttonText}
                 title={`${card.title} ${idx + 1}`}
                 description={card.description}
                 onDelete={() => deleteCard(card.id)}
@@ -87,11 +86,11 @@ function cards() {
           </div>
         ) : (
           <div>
-            <h1 className="font-bold text-2xl">No Cards</h1>
+            <h1 className="text-2xl font-bold">No Cards</h1>
             <p>Lorem Ipsum Dolor Sit Amet.</p>
           </div>
         )}
-        <div className="w-full flex justify-end mt-6">
+        <div className="flex justify-end w-full mt-6">
           <Button className="bg-blue-500 w-fit" onClick={addCard}>
             Add Card
           </Button>
@@ -101,4 +100,4 @@ function cards() {
   );
 }
 
-export default cards;
+export default Cards;

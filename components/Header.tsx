@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import { UserContext } from "../pages/_app";
 import Navigation from "./common/Navigation";
 
-export default function Header(props) {
+export default function Header() {
   const [{ user, errors }, service] = useContext(UserContext);
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export default function Header(props) {
   }, [errors]);
 
   function onSignIn() {
-    const password = prompt("Passwort");
+    const password = prompt("Passwort") || '';
     service({ type: "SIGN_IN", password });
   }
 
@@ -57,7 +57,11 @@ export default function Header(props) {
   );
 }
 
-function Bubble(props) {
+interface BubbleProps {
+  text: number 
+}
+
+function Bubble(props: BubbleProps) {
   return (
     <div className="absolute flex items-center justify-center w-4 h-4 text-xs text-white bg-red-600 rounded-full top-1/2 left-1/2">
       {props.text}
