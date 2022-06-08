@@ -23,13 +23,11 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 
 ## Babymarkt: Introduction to React
 
-### 1: Starting point for [useContext hook](/qgwr32/babymarkt-react/add-use-context)
+### 1: [Starting point](https://github.com/qgwr32/babymarkt-react/tree/add-use-context) for useContext hook
 Implement UserContext to avoid prop-drilling
 
-### 2: Starting point for [useReducer hook](/qgwr32/babymarkt-react/add-use-reducer)
+### 2: [Starting point](https://github.com/qgwr32/babymarkt-react/tree/add-use-reducer) for useReducer hook
 Implement reducer for signing in and out 
 
-### 3: Starting point for [useEffect hook](/qgwr32/babymarkt-react/add-use-effect)
+### 3: [Starting point](https://github.com/qgwr32/babymarkt-react/tree/add-use-effect) for useEffect hook
 Implement error alert when password does not match while signing in 
-
-### Final [project](/qgwr32/babymarkt-react/main)
