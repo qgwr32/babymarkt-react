@@ -24,7 +24,7 @@ export default function Header(props) {
   }
 
   return (
-    <div className="header sticky top-0 z-10 bg-white border-b border-gray-100">
+    <div className="sticky top-0 z-10 bg-white border-b border-gray-100 header">
       <div className="container grid items-center grid-flow-row-dense grid-cols-2 px-8 py-4 mx-auto gap-y-4 sm:grid-cols-3">
         <div className="text-xl">Hey {user?.firstName}</div>
         <Navigation />
