@@ -1,6 +1,14 @@
 import Rating from "./Rating";
 
-export default function Product(props) {
+interface ProductProps {
+  name: string,
+  price: number,
+  rating: number,
+  isAvailable: boolean,
+  extraInfo?: string,
+}
+
+export default function Product(props: ProductProps) {
   const { name, price, rating, isAvailable, extraInfo } = props;
 
   return (
