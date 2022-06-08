@@ -1,10 +1,15 @@
 import { useState } from "react";
-import Button from "../../ui/Button";
+import Button from "../../ui/Button/index";
 
 const MAX_COUNT = 10;
 
-function Hero(props) {
-  const { title, description, buttonText } = props;
+interface HeroProps {
+  title: string,
+  description: string,
+}
+
+function Hero(props: HeroProps) {
+  const { title, description } = props;
   const [counter, setCounter] = useState(0);
 
   const updateCounter = () => {
