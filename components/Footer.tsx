@@ -2,14 +2,14 @@ import Link from "next/link";
 import { useContext } from "react";
 import { UserContext } from "../pages/_app";
 
-export default function Header(props) {
+export default function Header() {
   const [{ user }, service] = useContext(UserContext);
 
   function onSignOut() {
     service({ type: "SIGN_OUT" });
   }
   return (
-    <div className="footer text-white bg-gray-800">
+    <div className="text-white bg-gray-800 footer">
       <div className="container grid items-start grid-cols-2 gap-8 p-8 mx-auto md:grid-cols-4">
         <div className="space-y-2">
           {user != null && (

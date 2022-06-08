@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, Dispatch, useReducer } from "react";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 
@@ -10,20 +10,38 @@ const defaultUser = {
   wishlistCount: 2,
 };
 
-export const UserContext = createContext();
+interface User {
+  password: string;
+  firstName: string;
+  babypoints: number;
+  cartSize: number;
+  wishlistCount: number;
+}
 
-function MyApp({ Component, pageProps }) {
+interface UserState {
+  user?: User;
+  errors?: string[];
+}
+
+type UserStateAction =
+  | { type: "SIGN_OUT" }
+  | { type: "SIGN_IN"; password: string };
+
+export const UserContext = createContext<[UserState, Dispatch<UserStateAction>]>([{}, () =>{}]);
+
+function MyApp({ Component, pageProps }: any) {
   const userReducer = useReducer(userService, {});
+
   return (
     <UserContext.Provider value={userReducer}>
-      <Layout pageProps={pageProps}>
+      <Layout>
         <Component {...pageProps} />
       </Layout>
     </UserContext.Provider>
   );
 }
 
-function userService({ user }, action) {
+function userService({ user }: UserState, action: UserStateAction) {
   switch (action.type) {
     case "SIGN_OUT":
       return {};
@@ -42,8 +60,6 @@ function userService({ user }, action) {
 
       return { user: defaultUser };
     }
-    default:
-      throw new Error(`Invalid action: ${action.type}`);
   }
 }
 
